@@ -107,3 +107,6 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+
+# Claude Code ↔ Unity connection: absolute paths for one machine, not for students
+.mcp.json
