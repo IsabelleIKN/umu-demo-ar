@@ -1,29 +1,27 @@
-# umu-demo-ar: Android AR demos for Unity
+# umu-demo-ar: Android AR starter project for Unity
 
-Small Unity demos showing augmented reality (AR) for a museum, on an Android phone or tablet: a 3D object that appears on a printed image, and an object you place on the floor or a table. They use Unity's **AR Foundation** with Google's **ARCore**.
+A Unity project for exploring augmented reality (AR) for a museum, on an Android phone or tablet. It uses Unity's **AR Foundation** with Google's **ARCore**.
 
-Each demo is one scene with short scripts you can read in one sitting. Replace the interaction with your own idea.
+It holds one **check scene** that shows AR works and draws the surfaces it finds (floor, tables, walls). You can run it in the Unity editor without a device, in a simulated room. Build your own idea on top of it.
 
-The webcam and Kinect demos are in a separate project: **[umu-demo](https://github.com/IsabelleIKN/umu-demo)**.
+The webcam and Kinect starter project is separate: **[umu-demo](https://github.com/IsabelleIKN/umu-demo)**.
 
-> **Work in progress.** The demo scenes below are being built. For now the project holds one check scene in `Assets/Checks/`.
+## What's in here
 
-## The demos
-
-| Scene | What it shows |
+| Scene (in `Assets/Checks/`) | What it shows |
 |---|---|
-| `AR_ImageMarker` | Point the camera at a printed image; a 3D object and an info label appear on it. A printable marker is included. |
-| `AR_PlaceObject` | The floor or a table is detected; tap to place an object (e.g. a statue), tap again to move it. |
+| `ARCheck` | The AR session's state, and the surfaces (planes) ARCore finds, drawn as you look around |
 
-Setup steps for the phone, common problems and tips for the museum are in **[Assets/Demos/README.md](Assets/Demos/README.md)**.
+Setup steps for the device, how the code works, common problems and tips for the museum are in **[Assets/Demos/README.md](Assets/Demos/README.md)**.
 
 ## Getting started
 
-1. **Install Unity 6.3 LTS, version 6000.3.26f1**, with Unity Hub, **including the *Android Build Support* module** with its *OpenJDK* and *Android SDK & NDK Tools* parts. Already have the editor without it? In Hub, go to *Installs*, click the gear next to the editor, choose *Add modules*. If Hub doesn't offer 6000.3.26f1, get it from the [Unity download archive](https://unity.com/releases/editor/archive).
-2. **Clone this repo**, with GitHub Desktop or `git clone https://github.com/IsabelleIKN/umu-demo-ar.git`.
-3. **Open the project:** in Unity Hub, click *Add* → *Add project from disk* and pick the project folder. No setup script is needed for this project.
-4. **Switch to Android:** *File* → *Build Profiles* → *Android* → *Switch Platform*. The first time, this takes a few minutes.
-5. Follow [Assets/Demos/README.md](Assets/Demos/README.md) to build to your device, or to try the demos in the editor first with XR Simulation, no device needed.
+1. **Install Unity 6.3 LTS, version 6000.3.26f1**, with Unity Hub. If Hub doesn't offer 6000.3.26f1, get it from the [Unity download archive](https://unity.com/releases/editor/archive). This is the version we tested; other Unity 6 versions may work.
+   - **Only to build to a device:** also install the *Android Build Support* module with its *OpenJDK* and *Android SDK & NDK Tools* parts. Already have the editor without it? In Hub, go to *Installs*, click the gear next to the editor, choose *Add modules*. You don't need it to try the scene in the editor.
+2. **Clone this repo**, with GitHub Desktop or `git clone https://github.com/IsabelleIKN/umu-demo-ar.git`. Or get it from a USB stick.
+3. **Open the project:** in Unity Hub, click *Add* → *Add project from disk* and pick the project folder. No setup script is needed for this project. If Hub warns that Android support is missing, open it anyway: the editor simulation doesn't need it.
+4. Open `Assets/Checks/ARCheck.unity` and press Play. You're now in a simulated room: see [Assets/Demos/README.md](Assets/Demos/README.md), section 4, for the controls.
+5. **To build to a device:** *File* → *Build Profiles* → *Android* → *Switch Platform* (the first time takes a few minutes), then follow section 4 of the same README.
 
 ## What's already set up
 
@@ -39,10 +37,7 @@ If you start your own AR project later, these are the settings it needs. They're
 
 ```
 README.md            this file
+Assets/Checks/       the check scene and its script: start here
 Assets/Demos/
-  README.md          phone setup, building, problems, museum tips
-  ImageMarker/       the image marker demo
-  PlaceObject/       the place-an-object demo
-Assets/Checks/       check scene used while building the demos (will be removed)
-Markers/             printable marker
+  README.md          device setup, building, how the code works, problems, museum tips
 ```

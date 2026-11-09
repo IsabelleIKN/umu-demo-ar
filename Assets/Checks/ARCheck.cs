@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 
-// Phase 0 check: does an empty AR Foundation scene run on this Android device?
+// The simplest AR Foundation scene: does AR run, in the editor's simulated room or on an Android device?
 // Shows the AR session state and how many surfaces (planes) ARCore has found.
-// Not a demo: the real AR_PlaceObject scene replaces this.
+// A starting point: read it, then build your own idea on top of it.
 public class ARCheck : MonoBehaviour
 {
     public ARPlaneManager planeManager;   // on the XR Origin
